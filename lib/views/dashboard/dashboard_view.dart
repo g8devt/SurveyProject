@@ -95,17 +95,17 @@ class _DashboardViewState extends State<DashboardView> {
                     onTap: () {
                       routes.pushNav(context, widget: SurveryView());
                     },
-                    child: Image.asset(Assets.icDashNew, width: width(context) * .9, height: 100, fit: BoxFit.fill),
+                    child: Image.asset(Assets.icDashNew, width: width(context) * .9, height: 110, fit: BoxFit.fill),
                   ),
                   const Gap(10),
                   GestureDetector(
                     onTap: () {},
-                    child: Image.asset(Assets.icDashDisaster, width: width(context) * .9, height: 100, fit: BoxFit.fill),
+                    child: Image.asset(Assets.icDashDisaster, width: width(context) * .9, height: 110, fit: BoxFit.fill),
                   ),
                   const Gap(10),
                   GestureDetector(
                     onTap: () {},
-                    child: Image.asset(Assets.icDashSync, width: width(context) * .9, height: 100, fit: BoxFit.fill),
+                    child: Image.asset(Assets.icDashSync, width: width(context) * .9, height: 110, fit: BoxFit.fill),
                   ),
                 ],
               ),
