@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:survey_project/bloc/post_bloc/post_bloc.dart';
 import 'package:survey_project/utilities/colors.dart';
 import 'package:survey_project/views/splash/splash_screen_view.dart';
 import 'package:survey_project/views/widgets/loading_widget.dart';
@@ -130,6 +131,7 @@ class _MyAppState extends State<MyApp> {
             BlocProvider<LoadVerifCubit>(create: (_) => LoadVerifCubit()),
             BlocProvider<UserProfileMobileNumberCubit>(create: (_) => UserProfileMobileNumberCubit()),
             BlocProvider<LoginBloc>(create: (_) => LoginBloc()),
+            BlocProvider<PostBloc>(create: (_) => PostBloc()),
           ],
           child: MaterialApp(
             builder: (context, child) => ResponsiveBreakpoints.builder(

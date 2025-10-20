@@ -80,7 +80,7 @@ class BorderedTextField extends StatelessWidget {
       validator: validator,
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: GoogleFonts.poppins(color: borderColor),
+        hintStyle: GoogleFonts.poppins(color: borderColor,  fontSize: 15, ),
         filled: true,
         fillColor: backgroundColor,
         contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),

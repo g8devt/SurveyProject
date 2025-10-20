@@ -5,6 +5,7 @@ import '../../utilities/assets.dart';
 import '../../utilities/helpers.dart';
 import '../../utilities/import.dart';
 import '../widgets/custom_text.dart';
+import 'form.dart';
 
 class SurveryView extends StatefulWidget {
   const SurveryView({super.key});
@@ -45,14 +46,14 @@ class _SurveryViewState extends State<SurveryView> {
                 children: [
                   GestureDetector(
                     onTap: () {
-
+                      routes.pushNav(context, widget: SurveyForm(gender: 'MALE',));
                     },
                     child: Image.asset(Assets.icSurveyMale, width: width(context) * .9, fit: BoxFit.fill),
                   ),
                   const Gap(10),
                   GestureDetector(
                     onTap: () {
-
+                      routes.pushNav(context, widget: SurveyForm(gender: 'FEMALE',));
                     },
                     child: Image.asset(Assets.icSurveyFemale, width: width(context) * .9, fit: BoxFit.fill),
                   ),
