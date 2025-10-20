@@ -67,7 +67,7 @@ class _SurveyFormState extends State<SurveyForm> {
               style: GoogleFonts.poppins(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
               children: [
                 TextSpan(
-                  text: 'RABAE – 18–59 YEARS OLD.',
+                  text: '${gender == 'MALE' ? 'LALAKI' : 'BABAE'} – 18–59 YEARS OLD.',
                   style: GoogleFonts.poppins(color: Colors.blue.shade800, fontWeight: FontWeight.w500, fontSize: 13),
                 ),
               ],
@@ -106,45 +106,51 @@ class _SurveyFormState extends State<SurveyForm> {
                   // Part header
                   Text("Part 1 of 7", style: GoogleFonts.poppins(color: Colors.grey.shade700, fontSize: 13)),
                   const SizedBox(height: 5),
-                  Text(
-                    "Pagkakakilanlan",
-                    style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w600, color: Colors.black),
-                  ),
-                  const SizedBox(height: 20),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Pagkakakilanlan",
+                        style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w600, color: Colors.black),
+                      ),
+                      const SizedBox(height: 20),
 
-                  // Form fields (using your stateless widgets)
-                  BorderedTextField(hint: "Pangalan", controller: nameController, borderColor: Colors.grey,),
-                  const Gap(10),
-                  BorderedTextField(hint: "Edad", controller: ageController, borderColor: Colors.grey,),
-                  const Gap(10),
-                  BorderedTextField(hint: "Kaarawan (MM/DD/YY)", controller: birthdateController, borderColor: Colors.grey,),
-                  const Gap(10),
-                  BorderedTextField(hint: "Tirahan", controller: addressController, borderColor: Colors.grey,),
-                  const Gap(10),
+                      // Form fields (using your stateless widgets)
+                      BorderedTextField(hint: "Pangalan", controller: nameController, borderColor: Colors.grey,),
+                      const Gap(10),
+                      BorderedTextField(hint: "Edad", controller: ageController, borderColor: Colors.grey,),
+                      const Gap(10),
+                      BorderedTextField(hint: "Kaarawan (MM/DD/YY)", controller: birthdateController, borderColor: Colors.grey,),
+                      const Gap(10),
+                      BorderedTextField(hint: "Tirahan", controller: addressController, borderColor: Colors.grey,),
+                      const Gap(10),
 
-                  // Dropdown (status)
-                  CustomText(title: "Status", fontSize: 12, textColor: Colors.grey, fontWeight: FontWeight.w500, margin: const EdgeInsets.only(top: 10, bottom: 5)),
-                  FormCivilStatusPicker(
-                    value: selectedCivilStatus,
-                    isHideDropdownSearchData: true,
-                    hasUnderline: false,
-                    hasFullBorder: true,
-                    buttonStylePadding: EdgeInsets.symmetric(horizontal: 0),
-                    onChanged: (value) {
-                      setState(() {
-                        selectedCivilStatus = value;
-                      });
-                    },
+                      // Dropdown (status)
+                      CustomText(title: "Status", fontSize: 12, textColor: Colors.grey, fontWeight: FontWeight.w500, margin: const EdgeInsets.only(top: 10, bottom: 5)),
+                      FormCivilStatusPicker(
+                        value: selectedCivilStatus,
+                        isHideDropdownSearchData: true,
+                        hasUnderline: false,
+                        hasFullBorder: true,
+                        buttonStylePadding: EdgeInsets.symmetric(horizontal: 0),
+                        onChanged: (value) {
+                          setState(() {
+                            selectedCivilStatus = value;
+                          });
+                        },
+                      ),
+                      const Gap(10),
+                      BorderedTextField(hint: "Relihiyon", controller: religionController, borderColor: Colors.grey,),
+                      const Gap(10),
+                      BorderedTextField(hint: "Weight (kg)", controller: weightController, borderColor: Colors.grey,),
+                      const Gap(10),
+                      BorderedTextField(hint: "Height (ft)", controller: heightController, borderColor: Colors.grey,),
+                      const Gap(10),
+                      BorderedTextField(hint: "Blood Type", controller: bloodTypeController, borderColor: Colors.grey,),
+                      const Gap(30),
+                    ],
                   ),
-                  const Gap(10),
-                  BorderedTextField(hint: "Relihiyon", controller: religionController, borderColor: Colors.grey,),
-                  const Gap(10),
-                  BorderedTextField(hint: "Weight (kg)", controller: weightController, borderColor: Colors.grey,),
-                  const Gap(10),
-                  BorderedTextField(hint: "Height (ft)", controller: heightController, borderColor: Colors.grey,),
-                  const Gap(10),
-                  BorderedTextField(hint: "Blood Type", controller: bloodTypeController, borderColor: Colors.grey,),
-                  const Gap(30),
                   // NEXT Button
                   SizedBox(
                     width: double.infinity,
