@@ -15,6 +15,7 @@ import 'package:survey_project/views/widgets/loading_widget.dart';
 import 'bloc/common/_common.dart';
 import 'bloc/common/common_cubit.dart';
 
+import 'bloc/login_bloc/login_bloc.dart';
 import 'data/model/push_notification.dart';
 import 'utilities/_utils.dart';
 
@@ -128,6 +129,7 @@ class _MyAppState extends State<MyApp> {
             BlocProvider<BarangayListCubit>(create: (_) => BarangayListCubit()),
             BlocProvider<LoadVerifCubit>(create: (_) => LoadVerifCubit()),
             BlocProvider<UserProfileMobileNumberCubit>(create: (_) => UserProfileMobileNumberCubit()),
+            BlocProvider<LoginBloc>(create: (_) => LoginBloc()),
           ],
           child: MaterialApp(
             builder: (context, child) => ResponsiveBreakpoints.builder(

@@ -76,15 +76,17 @@ class CustomPinTextField extends StatelessWidget {
             textStyle: const TextStyle(color: primaryColor),
             pinTheme: PinTheme(
               shape: PinCodeFieldShape.box,
+
               borderRadius: BorderRadius.circular(borderRadius ?? 15),
               fieldWidth: fieldWidth,
               fieldHeight: fieldHeight,
-              activeColor:Colors.transparent,
-              inactiveColor: Colors.transparent,
-              selectedColor: Colors.transparent,
+              activeColor:Colors.black,
+              inactiveColor: Colors.black,
+              selectedColor: Colors.black,
               activeFillColor: Colors.white,
               inactiveFillColor: Colors.white,
               selectedFillColor: Colors.white,
+
             ),
             onCompleted: onCompleted,
             onChanged: onChanged,

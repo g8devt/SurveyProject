@@ -39,10 +39,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
       },
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        body: Align(
-          alignment: Alignment.bottomCenter,
-          child: Image.asset(Assets.imgBG1, fit: BoxFit.fill, width: double.infinity, height: double.infinity),
-        ),
+        body: Image.asset(Assets.imgBG1, fit: BoxFit.fill, width: double.infinity, height: double.infinity),
       ),
     );
   }

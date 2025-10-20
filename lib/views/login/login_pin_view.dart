@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:survey_project/utilities/import.dart';
+import 'package:survey_project/views/dashboard/dashboard_view.dart';
+import 'package:survey_project/views/widgets/_widget.dart';
 
 import '../../bloc/login_bloc/login_bloc.dart';
 import '../../utilities/_utils.dart';
+import '../../utilities/colors.dart';
 import '../widgets/custom_pin_textfield.dart';
 import '../widgets/custom_text.dart';
 
@@ -55,37 +59,51 @@ class _LoginPinViewState extends State<LoginPinView> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(height: height(context) * .05),
+                                  SizedBox(height: height(context) * .35),
                                   Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              CustomText(title: 'Enter PIN', fontSize: 25, textColor: Colors.white, fontWeight: FontWeight.bold),
-                                              Padding(
-                                                padding: const EdgeInsets.only(left: 50.0),
-                                                child: CustomText(title: 'Enter your pin code for authentication', fontSize: 13, textColor: Colors.white),
-                                              ),
-                                            ],
+                                    child: Center(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          const Gap(50),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                            child: CustomText(title: 'Enter PIN', fontSize: 18, textColor: Colors.black, fontWeight: FontWeight.normal),
                                           ),
-                                        ),
-                                        const Gap(50),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(32, 0, 32, 0),
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            children: [
-                                              CustomPinTextField(textController: _pinController, width: isTablet ? 200.r : 220.r, onCompleted: (String? value) {}),
-                                              const SizedBox(height: 20),
-                                            ],
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(32, 0, 32, 0),
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              children: [
+                                                CustomPinTextField(textController: _pinController, width: isTablet ? 200.r : 220.r, onCompleted: (String? value) {}),
+                                                const SizedBox(height: 20),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                          CustomButton(
+                                            title: 'LOGIN',
+                                            buttonColor: secondaryColor,
+                                            borderRadius: 25,
+                                            onTap: () {
+                                              routes.pushAndRemoveUntilNav(context, widget: DashboardView());
+                                            },
+                                            buttonWidth: width(context) * .4,
+                                          ),
+                                          SizedBox(height: height(context) * .1),
+                                          CustomText(title: 'Security Notice', fontSize: 12, textColor: Colors.red, fontWeight: FontWeight.bold),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(horizontal: 45.0),
+                                            child: CustomText(
+                                              title: 'This is a government-secured portal. Access by unauthorized users is strictly prohibited and actively monitored',
+                                              fontSize: 12,
+                                              textColor: Colors.red,
+                                              fontWeight: FontWeight.normal,
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ],

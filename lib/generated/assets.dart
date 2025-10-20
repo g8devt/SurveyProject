@@ -18,11 +18,14 @@ class Assets {
   static const String iconsIcDashboardBuildingpermit = 'assets/icons/ic_dashboard_buildingpermit.png';
   static const String iconsIcDashboardCdrrmo = 'assets/icons/ic_dashboard_cdrrmo.png';
   static const String iconsIcDashboardCivilregistry = 'assets/icons/ic_dashboard_civilregistry.png';
+  static const String iconsIcDashboardDisaster = 'assets/icons/ic_dashboard_disaster.png';
   static const String iconsIcDashboardEmergency = 'assets/icons/ic_dashboard_emergency.png';
   static const String iconsIcDashboardEmployment = 'assets/icons/ic_dashboard_employment.png';
   static const String iconsIcDashboardEt = 'assets/icons/ic_dashboard_et.png';
   static const String iconsIcDashboardHs = 'assets/icons/ic_dashboard_hs.png';
+  static const String iconsIcDashboardNew = 'assets/icons/ic_dashboard_new.png';
   static const String iconsIcDashboardSw = 'assets/icons/ic_dashboard_sw.png';
+  static const String iconsIcDashboardSync = 'assets/icons/ic_dashboard_sync.png';
   static const String iconsIcDelete = 'assets/icons/ic_delete.png';
   static const String iconsIcFeedback = 'assets/icons/ic_feedback.png';
   static const String iconsIcFeedbackHappy = 'assets/icons/ic_feedback_happy.png';
@@ -66,6 +69,8 @@ class Assets {
   static const String iconsIcSsMedical = 'assets/icons/ic_ss_medical.png';
   static const String iconsIcSsPermits = 'assets/icons/ic_ss_permits.png';
   static const String iconsIcSuccess = 'assets/icons/ic_success.png';
+  static const String iconsIcSurveyFemale = 'assets/icons/ic_survey_female.png';
+  static const String iconsIcSurveyMale = 'assets/icons/ic_survey_male.png';
   static const String iconsIcSwBurial = 'assets/icons/ic_sw_burial.png';
   static const String iconsIcSwEducation = 'assets/icons/ic_sw_education.png';
   static const String iconsIcSwLivelihood = 'assets/icons/ic_sw_livelihood.png';
@@ -96,5 +101,6 @@ class Assets {
   static const String jsonVerification = 'assets/json/verification.json';
   static const String logoAppLogo = 'assets/logo/app_logo.png';
   static const String logoLogoTransparent = 'assets/logo/logo_transparent.png';
+  static const String surveyProject = '.env';
 
 }

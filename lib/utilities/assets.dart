@@ -67,7 +67,14 @@ class Assets {
   static const String icDashET = 'assets/icons/ic_dashboard_et.png';
   static const String icDashHS = 'assets/icons/ic_dashboard_hs.png';
   static const String icDashSW = 'assets/icons/ic_dashboard_sw.png';
+  static const String icDashNew = 'assets/icons/ic_dashboard_new.png';
+  static const String icDashDisaster = 'assets/icons/ic_dashboard_disaster.png';
+  static const String icDashSync = 'assets/icons/ic_dashboard_sync.png';
   static const String imgChatBg = 'assets/icons/ic_dashboard_sw.png';
+
+  //SURVEY
+  static const String icSurveyMale = 'assets/icons/ic_survey_male.png';
+  static const String icSurveyFemale = 'assets/icons/ic_survey_female.png';
 
   //SERVICES
   static const String icID = 'assets/icons/ic_id.png';
