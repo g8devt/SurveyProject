@@ -104,6 +104,24 @@ class DefaultPicker extends StatelessWidget {
               //     color: isEnabled ? Colors.black : Colors.grey.withValues(alpha: .5),
               //   ),
               // ),
+              selectedItemBuilder: (BuildContext context) {
+                return items.map<Widget>((item) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        item.value ?? '',
+                        style: GoogleFonts.poppins(
+                          fontSize: 15,
+                          color: Colors.black,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  );
+                }).toList();
+              },
               buttonStyleData: ButtonStyleData(
                 padding: buttonStylePadding ?? const EdgeInsets.fromLTRB(14, 0, 14, 0),
                 width: width,
