@@ -14,6 +14,7 @@ import '../widgets/custom_text.dart';
 import '../widgets/custom_text_field.dart';
 import '../widgets/form_dropdown_button.dart';
 import 'components_form/step_1.dart';
+import 'components_form/step_2.dart';
 
 class SurveyForm extends StatefulWidget {
   final String gender;
@@ -36,7 +37,10 @@ class _SurveyFormState extends State<SurveyForm> {
   final TextEditingController bloodTypeController = TextEditingController();
 
   String? selectedCivilStatus;
-
+  String? selectedHousehold;
+  String? selectedHusbandWife;
+  String? selectedDisability;
+  String? selectedHouseholdDisability;
   int currentStep = 1;
 
   @override
@@ -66,19 +70,11 @@ class _SurveyFormState extends State<SurveyForm> {
           title: RichText(
             text: TextSpan(
               text: 'Health Survey ',
-              style: GoogleFonts.poppins(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: GoogleFonts.poppins(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
               children: [
                 TextSpan(
                   text: '${widget.gender == 'MALE' ? 'LALAKI' : 'BABAE'} – 18–59 YEARS OLD.',
-                  style: GoogleFonts.poppins(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 13,
-                  ),
+                  style: GoogleFonts.poppins(color: Colors.black, fontWeight: FontWeight.w500, fontSize: 13),
                 ),
               ],
             ),
@@ -101,14 +97,11 @@ class _SurveyFormState extends State<SurveyForm> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: List.generate(
                       7,
-                          (index) => Expanded(
+                      (index) => Expanded(
                         child: Container(
                           margin: const EdgeInsets.symmetric(horizontal: 2),
                           height: 4,
-                          decoration: BoxDecoration(
-                            color: index == 0 ? tertiaryColor : Colors.grey.shade300,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                          decoration: BoxDecoration(color: index == 0 ? tertiaryColor : Colors.grey.shade300, borderRadius: BorderRadius.circular(10)),
                         ),
                       ),
                     ),
@@ -116,53 +109,50 @@ class _SurveyFormState extends State<SurveyForm> {
                   const SizedBox(height: 25),
 
                   // Part header
-                  Text(
-                    "Part $currentStep of 7",
-                    style: GoogleFonts.poppins(
-                      color: Colors.grey.shade700,
-                      fontSize: 13,
-                    ),
-                  ),
+                  Text("Part $currentStep of 7", style: GoogleFonts.poppins(color: Colors.grey.shade700, fontSize: 13)),
                   const SizedBox(height: 5),
 
                   // ✅ Extracted Part 1 Widget
-                  SurveyPart1(
-                    nameController: nameController,
-                    ageController: ageController,
-                    birthdateController: birthdateController,
-                    addressController: addressController,
-                    religionController: religionController,
-                    weightController: weightController,
-                    heightController: heightController,
-                    bloodTypeController: bloodTypeController,
-                    selectedCivilStatus: selectedCivilStatus,
-                    onCivilStatusChanged: (value) {
-                      setState(() => selectedCivilStatus = value);
-                    },
-                    onNext: () {
-                      setState(() {
-                        currentStep = 2;
-                      });
-                    },
-                  ),
-                  SurveyPart1(
-                    nameController: nameController,
-                    ageController: ageController,
-                    birthdateController: birthdateController,
-                    addressController: addressController,
-                    religionController: religionController,
-                    weightController: weightController,
-                    heightController: heightController,
-                    bloodTypeController: bloodTypeController,
-                    selectedCivilStatus: selectedCivilStatus,
-                    onCivilStatusChanged: (value) {
-                      setState(() => selectedCivilStatus = value);
-                    },
-                    onNext: () {
-                      setState(() {
-                        currentStep = 2;
-                      });
-                    },
+                  SingleChildScrollView(
+                    child: currentStep == 1
+                        ? SurveyPart1(
+                            nameController: nameController,
+                            ageController: ageController,
+                            birthdateController: birthdateController,
+                            addressController: addressController,
+                            religionController: religionController,
+                            weightController: weightController,
+                            heightController: heightController,
+                            bloodTypeController: bloodTypeController,
+                            selectedCivilStatus: selectedCivilStatus,
+                            onCivilStatusChanged: (value) {
+                              setState(() => selectedCivilStatus = value);
+                            },
+                            onNext: () {
+                              setState(() {
+                                currentStep = 2;
+                              });
+                            },
+                          )
+                        : SurveyPart2(
+                            selectedDisability: selectedDisability,
+                            selectedHousehold: selectedHousehold,
+                            selectedHouseholdDisability: selectedHouseholdDisability,
+                            selectedHusbandWife: selectedHusbandWife,
+                            onCivilStatusChanged: (value) {
+                              setState(() => selectedCivilStatus = value);
+                            },
+                            onNext: () {
+                              setState(() {
+                                currentStep = 2;
+                              });
+                            },
+                            onBack: () {
+                              setState(() {
+                                currentStep = 1;
+                              });
+                            },
+                          ),
                   ),
                 ],
               ),
